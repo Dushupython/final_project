@@ -1,6 +1,6 @@
 from django.contrib.sites import requests
 from django.shortcuts import render
-from mysite.request_price import symbol
+from mysite.price_com import symbol, price
 import requests
 from django.http import HttpResponse
 from django.views.generic import CreateView
@@ -9,8 +9,7 @@ from .models import Bitcoin
 
 
 def index(request):
-    btc_price = requests.get(symbol('BTCUSDT')).text.split('price')
-    return HttpResponse(btc_price)
+    return HttpResponse(price('BTCUSDT'))
 
 
 class CreateBitcoinAlert(CreateView):
