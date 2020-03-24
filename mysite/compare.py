@@ -11,3 +11,5 @@ def comparison(trigger_price_1: float):
         TelegramBot.sendMessage(623458076, 'Test')
     else:
         pass  # timer
+
+
