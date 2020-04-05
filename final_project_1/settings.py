@@ -25,7 +25,7 @@ SECRET_KEY = 'na)o(3kn9ibz%uhqfadupodhxy9cuq+sf936t*@nx21x$o9_2%'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['7b011da2.ngrok.io', 'localhost', '127.0.0.1']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'mysite',
+    'django_telegram_login',
 ]
 
 MIDDLEWARE = [
@@ -120,3 +121,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+TELEGRAM_BOT_NAME = 'Price_project_bot'
+TELEGRAM_BOT_TOKEN = '1131352838:AAEY9zWfKDhLym85jHj5iylnyU4Wzf3YwqA'
+TELEGRAM_LOGIN_REDIRECT_URL = '7b011da2.ngrok.io/'
