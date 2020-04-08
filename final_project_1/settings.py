@@ -121,6 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 TELEGRAM_BOT_NAME = 'Price_project_bot'
 TELEGRAM_BOT_TOKEN = '1131352838:AAEY9zWfKDhLym85jHj5iylnyU4Wzf3YwqA'
 TELEGRAM_LOGIN_REDIRECT_URL = '7b011da2.ngrok.io/'
