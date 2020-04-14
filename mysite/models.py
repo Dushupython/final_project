@@ -2,7 +2,7 @@ from django.db import models
 from django.urls import reverse
 from django.db.models.signals import post_save
 # Create your models here.
-from django.utils.datetime_safe import datetime
+import datetime
 from mysite.price_com import price
 
 
@@ -33,7 +33,7 @@ class Symbol(models.Model):
     last_update = models.DateTimeField()
 
     def get_latest_data(self):
-        if (datetime.datetime.now() - self.last_update).total_seconds() > 10:
+        if (datetime.datetime.now().replace(tzinfo=None) - self.last_update.replace(tzinfo=None)).total_seconds() > 10:
             self.update_data()
         return self.price
 

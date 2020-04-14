@@ -10,5 +10,4 @@ def symbol(sym: str):
 
 def price(pair: str):
     price = requests.get(symbol(pair)).json()
-    price = float(price.get('price'))
     return price
