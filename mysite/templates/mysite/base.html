@@ -10,13 +10,19 @@
     </title>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
 </head>
 <body>
 {% block body %}
 <img src="{% static 'mysite/image/1.png' %}">
-{#<div><p>{{ price }}</p></div>#}
-{#<div><p>{{ price_1 }}</p></div>#}
+
+{% verbatim %}
+<div class="container" id="price"></div>
+{% endverbatim %}
+
 <a href="{% url 'mysite:trigger' %}">Триггер</a>
+<script src="/static/mysite/js/update_price.js"></script>
 {% endblock %}
 </body>
 </html>
