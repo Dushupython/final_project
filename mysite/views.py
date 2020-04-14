@@ -36,5 +36,5 @@ def index(request):
 
 
 def get_data_use_axios(request):
-    data = get_latest_data(('symbol1', 'symbol2'))
+    data = get_latest_data(('BTCUSDT'))
     return JsonResponse(data)
