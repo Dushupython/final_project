@@ -1,0 +1,14 @@
+{% extends 'mysite/base.html' %}
+{% block title %}
+  Удаление продукта
+{% endblock %}
+{% block body %}
+  <div class="col-lg-6 offset-3">
+    <form id="confirm_delete" method="post" enctype="multipart/form-data" >
+      {% csrf_token %}
+      Вы действительно хотите удалить "{{ object }}"?
+      <input type="submit" value="Ок" />
+      <a href="{% url 'mysite:update_trigger' object.id %}">Отмена</a>
+    </form>
+  </div>
+{% endblock %}

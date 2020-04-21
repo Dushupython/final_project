@@ -1,0 +1,19 @@
+{% extends 'mysite/base.html' %}
+{% load static %}
+{% block title %}
+  Страница авторизации
+{% endblock %}
+{% block body %}
+    <div class="col-lg-4 offset-4">
+      {% if form.errors %}
+          <p>Пароль или логин не верны</p>
+      {% endif %}
+      <form id="login_form" method="post"
+            action="{% url 'users_app:login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <p><button id="sub_btn" name="submit">Вход</button></p>
+        <input type="hidden" name="next" value="{{ request.GET.next }}">
+      </form>
+    </div>
+{% endblock %}

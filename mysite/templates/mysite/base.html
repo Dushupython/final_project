@@ -2,27 +2,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>
-        {% block title %}
-        Site
-        {% endblock %}
-    </title>
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.11/vue.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.3.1/css/foundation.min.css">
+  <meta charset="utf-8">
+  <title>Cryptocurrency Pricing Application</title>
 </head>
-<body>
-{% block body %}
-<img src="{% static 'mysite/image/1.png' %}">
-
-{% verbatim %}
-<div class="container" id="price">
-</div>
-{% endverbatim %}
-
-<a href="{% url 'mysite:trigger' %}">Триггер</a>
-<script src="/static/mysite/js/update_price.js"></script>
+  <body>
+  {% block body %}
+  <a href="{% url 'mysite:trigger' %}"><img src="https://image.flaticon.com/icons/svg/1156/1156949.svg" width="25" height="25"></a>
+  {% verbatim %}
+    <div class="container" id="app">
+      <h3 class="text-center">Cryptocurrency Pricing</h3>
+      <div class="columns medium-4" v-for="(result, index) in results">
+        <div class="card">
+          <div class="card-section">
+              <img :src="result[1]" width="150" height="150">
+            <p> {{index}} </p>
+          </div>
+          <div class="card-divider">
+            {{ result[0] }}
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endverbatim %}
+    <script src="https://unpkg.com/vue"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="/static/mysite/js/update_price.js"></script>
+  </body>
 {% endblock %}
-</body>
 </html>

@@ -1,8 +1,8 @@
 from django import forms
-from .models import Bitcoin
+from .models import Trigger
 
 
-class BitcoinForm(forms.ModelForm):
+class TriggerForm(forms.ModelForm):
     class Meta:
-        model = Bitcoin
+        model = Trigger
         fields = '__all__'

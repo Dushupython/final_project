@@ -1,0 +1,11 @@
+{% extends 'mysite/base.html' %}
+{% block body %}
+    <ol>
+    {% for trigger in trigger_list  %}
+    <li>
+        <a href="{% url 'mysite:update_trigger' trigger.id %}">{{ trigger }}</a>
+        <a href="{% url 'mysite:delete_trigger' trigger.id %}">Delete notification</a>
+    </li>
+    {% endfor %}
+    </ol>
+{% endblock %}
